@@ -214,7 +214,7 @@ struct optional_base {
         : init_(true), storage_(il, std::forward<Args>(args)...) {}
 
     ~optional_base() {
-        if (init_) storage_.value_.T::~T();
+        if (init_) storage_.value_.~T();
     }
 };
 
